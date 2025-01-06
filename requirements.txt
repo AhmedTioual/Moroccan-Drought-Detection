@@ -1,6 +1,11 @@
+streamlit 
+matplotlib 
+google-auth
+google-auth-oauthlib 
+google-auth-httplib2 
+google-api-python-client
 requests
 pandas
 torch==1.13.1
 numpy==1.24.2
 Pillow==9.4.0
-matplotlib
