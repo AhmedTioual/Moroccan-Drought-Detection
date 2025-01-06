@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import tempfile
 import shutil
 import torch.nn as nn
+from streamlit import session_state as stt
 
 # Device configuration
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -18,8 +19,8 @@ pixel_to_class = {0: 0, 70: 1, 162: 2, 213: 3}
 color_map = {
     0: [0, 0, 0],        # Black for class 0
     1: [255, 0, 0],      # Red for class 1
-    2: [255, 255, 0],    # Yellow for class 2
-    3: [255, 165, 0],    # Orange for class 3
+    2: [255, 165, 0],    # Yellow for class 2
+    3: [255, 255, 0],    # Orange for class 3
 }
 
 # Function to map pixel values to class indices
@@ -101,7 +102,7 @@ class DroughtDataset(Dataset):
         return input_tensor
 
 # Function to perform inference and overlay result on base image
-def process_masks(mask_paths):
+def process_masks(mask_paths,date_selected):
     # Create a temporary folder to save mask images
     temp_folder = tempfile.mkdtemp()
 
@@ -157,7 +158,7 @@ def process_masks(mask_paths):
     segmented_mask.putdata(new_data)
 
     # Load the base image
-    base_image = Image.open("BaseMap_Morocco.png").convert("RGBA")
+    base_image = Image.open("assets/BaseMap_Morocco.png").convert("RGBA")
 
     # Resize mask to match base image size (if needed)
     segmented_mask = segmented_mask.resize(base_image.size, resample=Image.NEAREST)
@@ -166,7 +167,7 @@ def process_masks(mask_paths):
     overlayed_image = Image.alpha_composite(base_image, segmented_mask)
 
     # Save and display the result
-    output_path = "overlayed_map.png"
+    output_path = f"Inference_results/{date_selected}.png"
     overlayed_image.save(output_path)
     #overlayed_image.show()
 
@@ -174,8 +175,3 @@ def process_masks(mask_paths):
 
     # Clean up the temporary folder
     shutil.rmtree(temp_folder)
-
-# Example usage
-mask_paths = ["morocco_masks/2024_10_01.png", "morocco_masks/2024_10_11.png"]
-
-process_masks(mask_paths)

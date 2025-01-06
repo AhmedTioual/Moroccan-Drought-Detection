@@ -1,0 +1,113 @@
+.about-us-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 5%; /* Use percentages for padding for better responsiveness */
+    width: 100%; /* Adjust to the full width of the container */
+    height: auto; /* Adjust height dynamically */
+}
+
+.about-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    width: 100%;
+}
+
+.grid-about {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid with minimum card width */
+    gap: 20px;
+    width: 110%;
+    padding: 20px;
+}
+
+.card-about {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px; /* Dynamic padding for flexibility */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: auto;
+    height: auto;
+}
+
+.card-about:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.person-image {
+    width: 200px; /* Make the image responsive */
+    max-width: 200px; /* Limit the maximum width */
+    height: 200px; /* Adjust height proportionally */
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+}
+
+.person-name {
+    font-size: 1.2em; /* Use relative units */
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.person-title {
+    font-size: 1em; /* Dynamic sizing */
+    color: #666;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Add gap for spacing between icons */
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 25px;
+    height: 25px;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .grid-about {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for tablet screens */
+    }
+
+    .person-name {
+        font-size: 1em;
+    }
+
+    .person-title {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-about {
+        grid-template-columns: 1fr; /* Stack cards for smaller screens */
+    }
+
+    .person-image {
+        max-width: 150px; /* Scale down images */
+    }
+
+    .person-name {
+        font-size: 0.9em;
+    }
+
+    .person-title {
+        font-size: 0.8em;
+    }
+}

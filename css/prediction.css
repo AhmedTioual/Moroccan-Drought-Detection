@@ -1,0 +1,170 @@
+/* Style for the top bar */
+body {
+    scroll-behavior: smooth;
+}
+.MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+[data-testid="stMainBlockContainer"] {
+    padding-top: 0;
+}
+
+[data-baseweb="tab-list"] {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 44px;
+}
+
+.stTabs [data-baseweb="tab-list"] button {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.title {
+    background-color: #696969;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -4%;
+}
+
+/* Content section styling */
+.content-section {
+    margin-top: 10px; /* Adjust based on the height of the sticky title bar */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+}
+
+div.stTabs > div > div > div > div > span {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.st-emotion-cache-ocqkz7 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    flex-grow: -3;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    gap: 0rem;
+}  
+
+/* Styling for the date input */
+.stDateInput {
+    background-color: #f4f4f9;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 222px;
+    height: auto;
+}
+
+
+/* Styling for the base map image */
+.stImage img {
+    border: 5px solid #ddd;
+    border-radius: 10px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+/* Styling for the base map title */
+.stMarkdown h3 {
+    color: #333;
+    font-size: 20px;
+}
+
+/* General app padding */
+.stApp {
+    padding: 0px;
+}
+
+#tabs-bui2-tabpanel-0 {
+    padding-top: 0px; 
+}
+
+.stMarkdown h3 {
+    color: #333;
+    font-size: 17px;
+    padding-bottom: 37px;
+    justify-content: center;
+    display: flex;
+}
+
+.stMarkdown h6 {
+    color: red;
+    padding-bottom: 37px;
+    justify-content: center;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center; /* Center columns horizontally */
+    gap: 30px; /* Add spacing between columns */
+    padding: 20px; /* Optional: Add padding around the container */
+}
+
+.stColumn > div {
+    margin: auto; /* Center content inside each column */
+}
+
+.st-emotion-cache-bkl7ri{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 222px;
+}
+
+.st-emotion-cache-1h3k0y3 {
+    width: calc(33.3333% - 1rem);
+    display: flex;
+    flex: 1 1 calc(33.3333% - 1rem);
+    justify-content: center;
+}
+
+.st-emotion-cache-1v0mbdj {
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+}
+
+@media (min-width: calc(54rem)) {
+    .st-emotion-cache-1ibsh2c {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container .stColumn {
+        max-width: 100%;
+    }
+}
+
+#tabs-bui2-tabpanel-2{
+    padding-top: 70px;
+}
+
+.st-emotion-cache-1eoatk1 {
+    width: calc(50% - 1rem);
+    flex: 1 1 calc(50% - 1rem);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
